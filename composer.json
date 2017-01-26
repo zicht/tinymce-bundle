@@ -1,0 +1,21 @@
+{
+    "name": "zicht/tinymce-bundle",
+    "description": "Zicht TinyMCE Bundle",
+    "authors": [
+        {
+            "name": "Zicht online",
+            "email": "info@zicht.nl"
+        }
+    ],
+    "require": {
+        "php": ">=5.3"
+    },
+    "require-dev": {
+    },
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-0": {
+            "Zicht": "src/"            
+        }
+    }
+}
