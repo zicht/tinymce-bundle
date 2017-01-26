@@ -1,0 +1,20 @@
+{% if include_jquery %}
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+{% endif %}
+{% if tinymce_jquery %}
+    <script type="text/javascript"
+            src="{{ asset(base_url~'bundles/zichttinymce/js/vendor/tinymce/%s/jquery.tinymce.min.js'|format(version), asset_package_name) }}"></script>
+    <script type="text/javascript"
+            src="{{ asset(base_url~'bundles/zichttinymce/js/init.jquery.js'|format(version), asset_package_name) }}"></script>
+{% else %}
+    <script type="text/javascript"
+            src="{{ asset(base_url~'bundles/zichttinymce/js/vendor/tinymce/%s/tinymce.min.js'|format(version), asset_package_name) }}"></script>
+    <script type="text/javascript" src="{{ asset(base_url~'bundles/zichttinymce/js/ready.min.js', asset_package_name) }}"></script>
+    <script type="text/javascript" src="{{ asset(base_url~'bundles/zichttinymce/js/init.standard.js', asset_package_name) }}"></script>
+{% endif %}
+<script type="text/javascript">
+    //<![CDATA[
+    zicht_tinymce_config = {{ tinymce_config|raw }};
+    initTinyMCE();
+    //]]>
+</script>
