@@ -7,6 +7,7 @@ namespace Zicht\Bundle\TinymceBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
+use Zicht\Bundle\TinymceBundle\ZichtTinymceBundle;
 
 /**
  * TinymceBundle configuration structure.
@@ -28,7 +29,7 @@ class Configuration implements ConfigurationInterface
         return $treeBuilder
             ->root('zicht_tinymce', 'array')
                 ->children()
-                    ->scalarNode('version')->defaultValue('4.1.4')->end()
+                    ->scalarNode('version')->defaultValue(ZichtTinymceBundle::BASE_VERSION)->end()
                     // Include jQuery (true) library or not (false)
                     ->booleanNode('include_jquery')->defaultFalse()->end()
                     // Use jQuery (true) or standalone (false) build of the TinyMCE
