@@ -38,6 +38,8 @@ class Configuration implements ConfigurationInterface
                     ->booleanNode('use_callback_tinymce_init')->defaultFalse()->end()
                     // Selector
                     ->scalarNode('selector')->defaultValue('.tinymce')->end()
+                    // language_url
+                    ->scalarNode('language_url')->end()
                     // base url for content
                     ->scalarNode('language_url')->end()
                     // base url for content

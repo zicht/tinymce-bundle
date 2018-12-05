@@ -99,6 +99,11 @@ function initTinyMCE(options) {
                     }
                 }
             }
+
+            if(options.language_url) {
+                settings.language_url = options.language_url;
+            }
+
             // Initialize textarea by its ID attribute
             tinymce
                 .createEditor(textareas[i].getAttribute('id'), settings)
