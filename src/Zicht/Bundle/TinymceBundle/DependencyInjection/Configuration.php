@@ -39,6 +39,8 @@ class Configuration implements ConfigurationInterface
                     // Selector
                     ->scalarNode('selector')->defaultValue('.tinymce')->end()
                     // base url for content
+                    ->scalarNode('language_url')->end()
+                    // base url for content
                     ->scalarNode('base_url')->end()
                     // asset packageName
                     ->scalarNode('asset_package_name')->end()

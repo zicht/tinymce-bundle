@@ -64,6 +64,11 @@ function initTinyMCE(options) {
                         });
                     }
                 };
+
+                if(options.language_url) {
+                    settings.language_url = options.language_url;
+                }
+
                 textarea.tinymce(settings);
             });
         });
