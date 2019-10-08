@@ -18,11 +18,13 @@
         $('form').on('sonata.add_element', function () {
 
             // Hack to remove existing editors, as they will not be properly redrawn
-            var editorIds = tinymce.editors.map(function (editor) {
-                return editor.id;
-            });
-            for (let index = 0; index < editorIds.length; index++) {
-                tinymce.editors[editorIds[index]] = undefined;
+            if (window['tinymce'] != undefined) {
+                var editorIds = tinymce.editors.map(function (editor) {
+                    return editor.id;
+                });
+                for (let index = 0; index < editorIds.length; index++) {
+                    tinymce.editors[editorIds[index]] = undefined;
+                }
             }
 
             // Re-initialize all TinyMCE fields
