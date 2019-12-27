@@ -23,11 +23,11 @@ class Configuration implements ConfigurationInterface
     {
         $defaults = $this->getTinymceDefaults();
 
-        $treeBuilder = new TreeBuilder();
+        $treeBuilder = new TreeBuilder('zicht_tinymce');
 
         // @formatter:off
         return $treeBuilder
-            ->root('zicht_tinymce', 'array')
+            ->getRootNode()
                 ->children()
                     ->scalarNode('version')->defaultValue(ZichtTinymceBundle::BASE_VERSION)->end()
                     // Include jQuery (true) library or not (false)

@@ -12,6 +12,8 @@
     <services>
         <service id="twig.extension.zicht_tinymce" class="%zicht_tinymce.twig.extension.class%">
             <argument type="service" id="service_container"/>
+            <argument type="service" id="assets.packages"/>
+            <argument type="service" id="templating"/>
             <tag name="twig.extension" alias="zicht_tinymce"/>
         </service>
     </services>

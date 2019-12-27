@@ -8,6 +8,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added|Changed|Deprecated|Removed|Fixed|Security
 Nothing so far
 
+## 2.0.0 - 2020-05-19
+### Added
+- Support for Symfony 4.x
+- Support for Twig 3
+### Removed
+- Support for Symfony 3.x
+
 ## 1.2.0 - 2020-05-19
 ### Changed
 - Switched from PSR-0 to PSR-4 autoloading
