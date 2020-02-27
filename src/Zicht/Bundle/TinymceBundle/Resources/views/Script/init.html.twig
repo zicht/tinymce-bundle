@@ -15,7 +15,12 @@
     initTinyMCE();
 
     window.document.addEventListener('DOMContentLoaded', function () {
-        $('form').on('sonata.add_element', function () {
+        $('form').on('sonata.add_element', function (event) {
+
+            // This event fires twice.  We only need to execute this code once.
+            if (!event.target.classList.contains('field-container')) {
+                return;
+            }
 
             // Hack to remove existing editors, as they will not be properly redrawn
             if (window['tinymce'] != undefined) {
