@@ -15,7 +15,7 @@
     "minimum-stability": "stable",
     "autoload": {
         "psr-4": {
-            "Zicht\\Bundle\\TinymceBundle\\": "src/Zicht/Bundle/TinymceBundle/"
+            "Zicht\\Bundle\\TinymceBundle\\": "src/"
         }
     }
 }

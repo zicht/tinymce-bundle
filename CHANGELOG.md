@@ -14,6 +14,8 @@ Nothing so far
 - Support for Twig 3
 ### Removed
 - Support for Symfony 3.x
+### Changed
+- Removed Zicht/Bundle/TinymceBundle/ directory depth: moved all code up directly into src/
 
 ## 1.2.0 - 2020-05-19
 ### Changed
