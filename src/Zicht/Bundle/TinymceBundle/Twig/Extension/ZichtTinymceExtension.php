@@ -1,15 +1,16 @@
 <?php
 namespace Zicht\Bundle\TinymceBundle\Twig\Extension;
 
-use Zicht\Bundle\TinymceBundle\Helper\LocaleHelper;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Twig\Extension\AbstractExtension;
+use Twig\TwigFunction;
+use Zicht\Bundle\TinymceBundle\Helper\LocaleHelper;
 use Zicht\Bundle\TinymceBundle\ZichtTinymceBundle;
 
 /**
  * Twig Extension for TinyMce support.
- *
  */
-class ZichtTinymceExtension extends \Twig_Extension
+class ZichtTinymceExtension extends AbstractExtension
 {
     /**
      * @var ContainerInterface $container Container interface
@@ -67,7 +68,7 @@ class ZichtTinymceExtension extends \Twig_Extension
     public function getFunctions()
     {
         return array(
-            'tinymce_init' => new \Twig_SimpleFunction(
+            'tinymce_init' => new TwigFunction(
                 'tinymce_init',
                 array($this, 'tinymceInit'),
                 array('is_safe' => array('html'))
