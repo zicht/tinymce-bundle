@@ -8,14 +8,14 @@
         }
     ],
     "require": {
-        "php": "^5.6 || ^7",
-        "symfony/framework-bundle": "^2.7 || ^3.4",
-        "twig/twig": "^2.7"
+        "php": "^7.1",
+        "symfony/framework-bundle": "^4.4",
+        "twig/twig": "^2.7 || ^3"
     },
     "minimum-stability": "stable",
     "autoload": {
         "psr-4": {
-            "Zicht\\Bundle\\TinymceBundle\\": "src/Zicht/Bundle/TinymceBundle/"
+            "Zicht\\Bundle\\TinymceBundle\\": "src/"
         }
     }
 }

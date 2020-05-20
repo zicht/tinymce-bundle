@@ -1,7 +1,10 @@
 <?php
+
 namespace Zicht\Bundle\TinymceBundle\Twig\Extension;
 
+use Symfony\Component\Asset\Packages;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use Symfony\Component\Templating\EngineInterface;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFunction;
 use Zicht\Bundle\TinymceBundle\Helper\LocaleHelper;
@@ -26,14 +29,20 @@ class ZichtTinymceExtension extends AbstractExtension
      */
     protected $baseUrl;
 
+    private $packages;
+
+    private $templating;
+
     /**
      * Initialize tinymce helper
      *
      * @param ContainerInterface $container
      */
-    public function __construct(ContainerInterface $container)
+    public function __construct(ContainerInterface $container, Packages $packages, EngineInterface $templating)
     {
         $this->container = $container;
+        $this->packages = $packages;
+        $this->templating = $templating;
     }
 
     /**
@@ -96,7 +105,7 @@ class ZichtTinymceExtension extends AbstractExtension
         unset($config['asset_package_name']);
 
         /** @var $assets \Symfony\Component\Templating\Helper\CoreAssetsHelper */
-        $assets = $this->getService('assets.packages');
+        $assets = $this->packages;
 
         // Get path to tinymce script for the jQuery version of the editor
         if ($config['tinymce_jquery']) {
@@ -182,7 +191,7 @@ class ZichtTinymceExtension extends AbstractExtension
             json_encode($config)
         );
 
-        return $this->getService('templating')->render('ZichtTinymceBundle:Script:init.html.twig', array(
+        return $this->templating->render('@ZichtTinymce/script/init.html.twig', array(
             'version' => $version,
             'tinymce_config' => $tinymceConfiguration,
             'include_jquery' => $config['include_jquery'],
@@ -212,7 +221,7 @@ class ZichtTinymceExtension extends AbstractExtension
     protected function getAssetsUrl($inputUrl)
     {
         /** @var $assets \Symfony\Component\Templating\Helper\CoreAssetsHelper */
-        $assets = $this->getService('assets.packages');
+        $assets = $this->packages;
 
         $url = preg_replace('/^asset\[(.+)\]$/i', '$1', $inputUrl);
 
