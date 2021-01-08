@@ -8,6 +8,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added|Changed|Deprecated|Removed|Fixed|Security
 Nothing so far
 
+## 2.0.1 - 2021-01-08
+### Added
+- Re-initialize tinyMCE on 'sonata-collection-item-added' event
+
 ## 2.0.0 - 2020-05-19
 ### Added
 - Support for Symfony 4.x
