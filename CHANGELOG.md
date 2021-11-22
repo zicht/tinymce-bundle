@@ -8,6 +8,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added|Changed|Deprecated|Removed|Fixed|Security
 Nothing so far
 
+## 2.1.0 - 2021-12-08
+### Added
+- Support for PHP 8
+### Removed
+- Support for PHP 7.1
+
 ## 2.0.1 - 2021-01-08
 ### Added
 - Re-initialize tinyMCE on 'sonata-collection-item-added' event
