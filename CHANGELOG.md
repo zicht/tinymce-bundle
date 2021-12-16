@@ -8,6 +8,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added|Changed|Deprecated|Removed|Fixed|Security
 Nothing so far
 
+## 2.1.1 - 2021-12-14
+### Fixed
+- Use Twig\Environment instead of deprecated EngineInterface
+
 ## 2.1.0 - 2021-12-08
 ### Added
 - Support for PHP 8

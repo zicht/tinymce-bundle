@@ -5,6 +5,7 @@ namespace Zicht\Bundle\TinymceBundle\Twig\Extension;
 use Symfony\Component\Asset\Packages;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\Templating\EngineInterface;
+use Twig\Environment;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFunction;
 use Zicht\Bundle\TinymceBundle\Helper\LocaleHelper;
@@ -31,18 +32,18 @@ class ZichtTinymceExtension extends AbstractExtension
 
     private $packages;
 
-    private $templating;
+    private $twig;
 
     /**
      * Initialize tinymce helper
      *
      * @param ContainerInterface $container
      */
-    public function __construct(ContainerInterface $container, Packages $packages, EngineInterface $templating)
+    public function __construct(ContainerInterface $container, Packages $packages, Environment $twig)
     {
         $this->container = $container;
         $this->packages = $packages;
-        $this->templating = $templating;
+        $this->twig = $twig;
     }
 
     /**
@@ -191,7 +192,7 @@ class ZichtTinymceExtension extends AbstractExtension
             json_encode($config)
         );
 
-        return $this->templating->render('@ZichtTinymce/script/init.html.twig', array(
+        return $this->twig->render('@ZichtTinymce/script/init.html.twig', array(
             'version' => $version,
             'tinymce_config' => $tinymceConfiguration,
             'include_jquery' => $config['include_jquery'],
