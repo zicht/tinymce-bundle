@@ -8,6 +8,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added|Changed|Deprecated|Removed|Fixed|Security
 Nothing so far
 
+## 2.2.0 - 2022-01-03
+### Changed
+- Enhanced `init.jquery.js` to use a asynchronous callback for loading the contents of the url-dropdown. This is mainly a UX-improvement.
+
 ## 2.1.1 - 2021-12-14
 ### Fixed
 - Use Twig\Environment instead of deprecated EngineInterface
