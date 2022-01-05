@@ -68,19 +68,6 @@ function initTinyMCE(options) {
                 if(options.language_url) {
                     settings.language_url = options.language_url;
                 }
-                let current_url = settings.link_list;
-                settings.link_list = function(success) {
-                    success([
-                        {title: 'Loading...please wait. This may take a while.', value: 'none'}
-                    ]);
-
-                    $.ajax({
-                        url: current_url
-                    }).done(function(data){
-                        success(data);
-                    })
-                }
-
                 textarea.tinymce(settings);
             });
         });

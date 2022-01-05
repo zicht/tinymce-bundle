@@ -8,6 +8,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added|Changed|Deprecated|Removed|Fixed|Security
 Nothing so far
 
+## 2.2.1 - 2022-01-03
+### Fixed
+- Revert enhancement of 2.2.0 as it seemingly duplicates the link-editor modal, which is an undesired side-effect.
+### Added
+- `4.9.11` version of TinyMCE.
+
 ## 2.2.0 - 2022-01-03
 ### Changed
 - Enhanced `init.jquery.js` to use a asynchronous callback for loading the contents of the url-dropdown. This is mainly a UX-improvement.
