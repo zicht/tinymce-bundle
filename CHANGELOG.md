@@ -8,6 +8,13 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added|Changed|Deprecated|Removed|Fixed|Security
 Nothing so far
 
+## 3.0.0 - 2022-10-05
+### Added
+- Support for Symfony ^5.4
+### Removed
+- Support for Symfony 4
+- Support for PHP 7.2/7.3
+
 ## 2.2.1 - 2022-01-03
 ### Fixed
 - Revert enhancement of 2.2.0 as it seemingly duplicates the link-editor modal, which is an undesired side-effect.
