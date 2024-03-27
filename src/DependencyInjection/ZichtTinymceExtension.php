@@ -48,10 +48,8 @@ class ZichtTinymceExtension extends Extension
      * Returns the recommended alias to use in XML.
      *
      * This alias is also the mandatory prefix to use when using YAML.
-     *
-     * @return string The alias
      */
-    public function getAlias()
+    public function getAlias(): string
     {
         return 'zicht_tinymce';
     }
